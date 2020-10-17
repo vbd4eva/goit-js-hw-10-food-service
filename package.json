@@ -1,25 +1,25 @@
 {
-  "name": "goit-js-hw-10-food-service",
+  "name": "goit-js-hw-09-parcel",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "parcel ./src/*.html",
-    "build": "parcel build ./src/*.html --public-url /goit-js-hw-10-food-service/",
+    "build": "parcel build ./src/*.html --public-url /goit-js-hw-09-parcel/",
     "deploy": "gh-pages -d dist",
     "predeploy": "npm run build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vbd4eva/goit-js-hw-10-food-service.git"
+    "url": "git+https://github.com/vbd4eva/goit-js-hw-09-parcel.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/vbd4eva/goit-js-hw-10-food-service/issues"
+    "url": "https://github.com/vbd4eva/goit-js-hw-09-parcel/issues"
   },
-  "homepage": "https://vbd4eva.github.io/goit-js-hw-10-food-service/",
+  "homepage": "https://vbd4eva.github.io/goit-js-hw-09-parcel/",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-nuke-dist": "^1.0.1",
