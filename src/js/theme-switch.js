@@ -5,9 +5,7 @@ const Theme = {
 
   LIGHT: 'light-theme',
 
-  DARK: 'dark-theme',
-  
-  
+  DARK: 'dark-theme',  
 };
 
 let currentTheme = undefined;
