@@ -8,60 +8,50 @@ const Theme = {
   DARK: 'dark-theme',  
 };
 
-let currentTheme = undefined;
-let actionTheme = undefined;
-
-// находит єл. - переключатель темы
-const themeToggleEl = document.querySelector(`[name=${Theme.TOGGLE_EL_NAME}]`);
-
-//проверяет ВебСторадж
-//     устанавливает значение Theme.currentTheme = значению в сторадж
-currentTheme = localStorageAPI.load(Theme.TOGGLE_EL_NAME);
-
-//если currentTheme = undefined
-//       -> получает значение нужной темы 
-//else actionTheme = currentTheme
-actionTheme = (!currentTheme) ? getThemeByCheckThemeToggleEl() : currentTheme;
-
-//      -> візівает функцию смены_дизайна(actionTheme)
-changeThemeDesign(actionTheme);
-
-//Вешает слушатель на 'change' "themeToggleEl" с функцией: onChangeThemeToggleEl;
-themeToggleEl.addEventListener('change', onChangeThemeToggleEl);
+let currentTheme;
+let actionTheme;
+onLoad();
 
 
 
-function onChangeThemeToggleEl() { 
-  //Функция возвращает значение темы согласно порожения "тумблера"
-  actionTheme = getThemeByCheckThemeToggleEl();
-  //      -> візівает функцию смены_дизайна(actionTheme)
+function onLoad() { 
+  Theme.toggleEl = document.querySelector(`[name=${Theme.TOGGLE_EL_NAME}]`);
+
+  currentTheme = localStorageAPI.load(Theme.TOGGLE_EL_NAME);
+
+  actionTheme = (!currentTheme) ? getThemeByCheckThemeToggleEl() : currentTheme;
+
   changeThemeDesign(actionTheme);
+
+  Theme.toggleEl.addEventListener('change', onChangeThemeToggleEl);
 }
 
-//Функция возвращает значение темы согласно порожения "тумблера"
 function getThemeByCheckThemeToggleEl() { 
-  return (themeToggleEl.checked) ? Theme.DARK : Theme.LIGHT; 
+  return (Theme.toggleEl.checked) ? Theme.DARK : Theme.LIGHT; 
 }
 
-// функция смены_дизайна(actionTheme)
 function changeThemeDesign(actionTheme) { 
-  // - если !actionTheme return
+
   if (!actionTheme) return false;
 
-  // -  снимает с БОДИ.currentTheme
   document.body.classList.remove(currentTheme);
-
-  // -  вешает на БОДИ.actionTheme
   document.body.classList.add(actionTheme);
 
-  // -  переключает тумблер согласно теме....
-  themeToggleEl.checked = (actionTheme === Theme.DARK) ? true : false;
+  Theme.toggleEl.checked = (actionTheme === Theme.DARK) ? true : false;
 
-  // -  записывает значение новой темы в локал сторадж
   localStorageAPI.save(Theme.TOGGLE_EL_NAME, actionTheme);
 
-  // -  currentTheme = actionTheme;
   currentTheme = actionTheme;
 
   return true;
 }
+
+function onChangeThemeToggleEl() { 
+
+  actionTheme = getThemeByCheckThemeToggleEl();
+
+  changeThemeDesign(actionTheme);
+}
+
+
+
