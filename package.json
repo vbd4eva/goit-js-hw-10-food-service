@@ -22,7 +22,6 @@
   "homepage": "https://vbd4eva.github.io/goit-js-hw-09-parcel/",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
-    "parcel-plugin-handlebars-precompile": "^1.0.2",
     "parcel-plugin-nuke-dist": "^1.0.1",
     "sass": "^1.27.0"
   },
