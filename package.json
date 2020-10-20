@@ -22,7 +22,7 @@
   "homepage": "https://vbd4eva.github.io/goit-js-hw-10-food-service",
   "customDistStructure": {
     "config": {
-      ".css": "css",
+      
       ".js": "js",
       "images": [
         ".jpg",

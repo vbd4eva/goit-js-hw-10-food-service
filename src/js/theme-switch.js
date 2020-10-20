@@ -32,18 +32,16 @@ function getThemeByCheckThemeToggleEl() {
 
 function changeThemeDesign(actionTheme) { 
 
-  if (!actionTheme) return false;
+  if (!actionTheme) return;
 
   document.body.classList.remove(currentTheme);
   document.body.classList.add(actionTheme);
 
-  Theme.toggleEl.checked = (actionTheme === Theme.DARK) ? true : false;
+  Theme.toggleEl.checked = (actionTheme === Theme.DARK);
 
   localStorageAPI.save(Theme.TOGGLE_EL_NAME, actionTheme);
 
   currentTheme = actionTheme;
-
-  return true;
 }
 
 function onChangeThemeToggleEl() { 
