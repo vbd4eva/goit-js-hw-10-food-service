@@ -3,7 +3,7 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{}],"Ge0f":[function(require,module,exports) {
 "use strict";Object.defineProperty(exports,"__esModule",{value:!0}),exports.default=void 0;var e=function(e){try{var r=localStorage.getItem(e);return null===r?void 0:JSON.parse(r)}catch(t){console.error("Get state error: ",t)}},r=function(e,r){try{var t=JSON.stringify(r);localStorage.setItem(e,t)}catch(o){console.error("Set state error: ",o)}},t={load:e,save:r};exports.default=t;
 },{}],"JIhF":[function(require,module,exports) {
-"use strict";var e=t(require("./local-storage-api.js"));function t(e){return e&&e.__esModule?e:{default:e}}var n,o,c={TOGGLE_EL_NAME:"theme",LIGHT:"light-theme",DARK:"dark-theme"};function l(){c.toggleEl=document.querySelector("[name=".concat(c.TOGGLE_EL_NAME,"]")),n=e.default.load(c.TOGGLE_EL_NAME),u(o=n||a()),c.toggleEl.addEventListener("change",d)}function a(){return c.toggleEl.checked?c.DARK:c.LIGHT}function u(t){return!!t&&(document.body.classList.remove(n),document.body.classList.add(t),c.toggleEl.checked=t===c.DARK,e.default.save(c.TOGGLE_EL_NAME,t),n=t,!0)}function d(){u(o=a())}l();
+"use strict";var e=t(require("./local-storage-api.js"));function t(e){return e&&e.__esModule?e:{default:e}}var o,c,n={TOGGLE_EL_NAME:"theme",LIGHT:"light-theme",DARK:"dark-theme"};function l(){n.toggleEl=document.querySelector("[name=".concat(n.TOGGLE_EL_NAME,"]")),o=e.default.load(n.TOGGLE_EL_NAME),d(c=o||a()),n.toggleEl.addEventListener("change",u)}function a(){return n.toggleEl.checked?n.DARK:n.LIGHT}function d(t){t&&(document.body.classList.remove(o),document.body.classList.add(t),n.toggleEl.checked=t===n.DARK,e.default.save(n.TOGGLE_EL_NAME,t),o=t)}function u(){d(c=a())}l();
 },{"./local-storage-api.js":"Ge0f"}],"pAws":[function(require,module,exports) {
 var define;
 var global = arguments[3];
@@ -17,4 +17,4 @@ module.exports=[{id:"XWaQXcbk0",name:"Картофель, запеченный �
 },{"../templates/menu-items.hbs":"DO4D","../json/menu.json":"gE54"}],"QvaY":[function(require,module,exports) {
 "use strict";require("../sass/main.scss"),require("./theme-switch.js"),require("./insert-menu-items");
 },{"../sass/main.scss":"clu1","./theme-switch.js":"JIhF","./insert-menu-items":"LlNb"}]},{},["QvaY"], null)
-//# sourceMappingURL=/goit-js-hw-10-food-service/js.bbbbf8f8.js.map
+//# sourceMappingURL=/goit-js-hw-10-food-service/js.5a3bc36b.js.map
